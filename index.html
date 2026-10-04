@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DOS21 · Volunteer for your own audit</title>
+<meta name="description" content="Before a decision that will cost you something, take a reading from four instruments and write it down. Ninety days later, read it back. A practice of The Jefferson Way.">
+<link rel="canonical" href="https://dos21.org/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DOS21">
+<meta property="og:title" content="Volunteer for your own audit.">
+<meta property="og:description" content="Before a decision that will cost you something, take a reading from four instruments and write it down. Ninety days later, read it back. A practice of The Jefferson Way.">
+<meta property="og:url" content="https://dos21.org/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{
+  /* Layout: one ledger column. Caslon is the quill, Plex Mono the cursor. Rules separate entries; numbers appear only where order is real. */
+  --paper:#F5F4EF;   /* cool paper: the ground */
+  --leaf:#FBFAF6;    /* a fresh leaf: the entry book */
+  --ink:#1C2530;     /* iron-gall ink: text */
+  --ink-2:#4B5564;   /* secondary text */
+  --ink-3:#5F6876;   /* labels and captions */
+  --rule:#DAD6CB;    /* ledger rule */
+  --rule-2:#B9B3A4;  /* stronger rule */
+  --blue:#2C4B7C;    /* engraving blue: the one accent */
+  --brass:#9C7A2F;   /* instrument brass: the cursor, used sparingly */
+  --on-ink:#F5F4EF;  /* text on an ink button */
+  --display:"Libre Caslon Display","Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --serif:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --measure:36rem;
+  --line:2rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#12171E;--leaf:#181E27;--ink:#ECEAE3;--ink-2:#B9C0C9;--ink-3:#97A0AC;
+    --rule:#29313C;--rule-2:#3B4553;--blue:#9BB6E3;--brass:#C9A55A;--on-ink:#12171E;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#12171E;--leaf:#181E27;--ink:#ECEAE3;--ink-2:#B9C0C9;--ink-3:#97A0AC;
+  --rule:#29313C;--rule-2:#3B4553;--blue:#9BB6E3;--brass:#C9A55A;--on-ink:#12171E;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:1.125rem;line-height:1.6;padding-inline:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+.wrap{max-width:46rem;margin-inline:auto}
+p{margin:0 0 1rem;max-width:var(--measure)}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--paper);border-bottom:1px solid var(--rule);margin-inline:-16px;padding-inline:16px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3.5rem}
+.wordmark{color:var(--ink);text-decoration:none;white-space:nowrap}
+.wordmark.mono{font-family:var(--mono);font-weight:500;font-size:1.1rem;letter-spacing:.06em;display:inline-flex;align-items:baseline}
+.wordmark.mono .us{display:inline-block;width:.62em;height:.11em;background:var(--brass);margin-left:.1em;animation:blink 1.1s steps(1,end) infinite}
+.wordmark.serif{font-family:var(--serif);font-size:1.12rem;letter-spacing:.01em}
+.cta-sm{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:1px solid currentColor;padding-block:.15rem;white-space:nowrap}
+@keyframes blink{50%{opacity:0}}
+
+/* Type */
+.eyebrow{font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin:0 0 1rem}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2.75rem,11vw,5.25rem);line-height:1.02;letter-spacing:-.01em;margin:0 0 1.5rem;text-wrap:balance}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(2rem,7vw,3rem);line-height:1.08;margin:0 0 1.25rem;text-wrap:balance;max-width:20ch}
+h3{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.2;margin:0 0 .4rem}
+.lead{font-size:1.25rem;line-height:1.55}
+.hero{padding-block:3.25rem 3rem}
+section{padding-block:3.25rem;border-top:1px solid var(--rule)}
+section[id]{scroll-margin-top:4.5rem}
+.from{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:1.5rem 0 0}
+.from a{color:var(--ink-2)}
+.strong-line,.closing{font-family:var(--display);font-size:1.6rem;line-height:1.25}
+.closing{margin-top:1.25rem}
+
+/* The ledger */
+.ledger{margin:2rem 0 .6rem;border-top:1px solid var(--rule-2);max-width:var(--measure)}
+.row{display:flex;align-items:baseline;gap:.75rem;padding-block:.7rem;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--ink-2)}
+.row .lbl{min-width:0}
+.row .fill{flex:1 1 1rem;min-width:1rem;border-bottom:1px dotted var(--rule-2);align-self:center}
+.row .val{font-size:1.05rem;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.row.you .lbl{color:var(--ink)}
+.cursor{display:inline-block;width:.55em;height:1.05em;background:var(--brass);vertical-align:-.18em;animation:blink 1.1s steps(1,end) infinite}
+.note{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;line-height:1.55;color:var(--ink-3)}
+
+/* Buttons and links */
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:3rem;padding:.75rem 1.25rem;font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.12em;line-height:1.3;text-transform:uppercase;text-decoration:none;color:var(--ink);background:transparent;border:1px solid var(--ink);border-radius:2px;cursor:pointer}
+.btn:hover{background:var(--ink);color:var(--on-ink)}
+.btn-primary{background:var(--ink);color:var(--on-ink)}
+.btn-primary:hover{background:var(--blue);border-color:var(--blue);color:var(--on-ink)}
+.btn[disabled]{opacity:.55;cursor:default}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.textlink{font-family:var(--mono);font-size:.76rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:.1rem}
+.textlinks{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;margin-top:.5rem}
+
+/* Numbered lists: the instruments and the steps, where order is real */
+.numbered{list-style:none;margin:1.75rem 0;padding:0;border-top:1px solid var(--rule-2);max-width:var(--measure)}
+.numbered>li{display:grid;grid-template-columns:2.75rem minmax(0,1fr);padding-block:1rem;border-bottom:1px solid var(--rule)}
+.numbered .n{font-family:var(--mono);font-size:.8rem;color:var(--blue);padding-top:.5rem;font-variant-numeric:tabular-nums}
+.numbered .name{display:block;font-family:var(--display);font-weight:400;font-size:1.6rem;line-height:1.15;margin:0}
+.numbered .q{display:block;font-style:italic;color:var(--ink-2);margin-top:.2rem}
+.numbered p{margin:.3rem 0 0;color:var(--ink-2)}
+
+/* Quotation */
+blockquote{margin:2.25rem 0 0;padding:0;max-width:32rem}
+blockquote p{font-family:var(--display);font-size:clamp(1.6rem,5.6vw,2.25rem);line-height:1.2;margin:0 0 .75rem}
+blockquote cite{font-family:var(--mono);font-style:normal;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+
+/* The entry book */
+.privacy{font-family:var(--mono);font-size:.78rem;letter-spacing:.02em;line-height:1.55;color:var(--ink-2)}
+.book{background:var(--leaf);border:1px solid var(--rule-2);border-radius:3px;margin-top:1.75rem;max-width:40rem}
+.book-head{display:flex;flex-wrap:wrap;gap:.35rem 1.5rem;justify-content:space-between;padding:.95rem 1.1rem;border-bottom:1px solid var(--rule-2);font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.book-head b{font-weight:500;color:var(--ink)}
+.field{padding:1.1rem 1.1rem 1.2rem;border-bottom:1px solid var(--rule)}
+.field label{display:block;margin-bottom:.45rem}
+.k{display:block;font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0}
+.field .q,.book-foot .q{display:block;font-style:italic;color:var(--ink-2);font-size:1.02rem;line-height:1.4;margin-top:.15rem}
+.field input,.field textarea{display:block;width:100%;margin:0;border:0;border-radius:0;background-color:transparent;color:var(--ink);font-family:var(--serif);font-size:1.0625rem;line-height:var(--line);padding:0 .1rem}
+.field input{height:calc(var(--line) + 1px);border-bottom:1px solid var(--rule-2)}
+.field textarea{min-height:calc(var(--line) * 3);resize:vertical;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--line) - 1px),var(--rule-2) calc(var(--line) - 1px),var(--rule-2) var(--line));background-attachment:local}
+.field ::placeholder{color:var(--ink-3);opacity:1;font-style:italic}
+.book-foot{padding:1.1rem}
+.book-foot .actions{margin-top:1.1rem}
+.book-foot .btn{flex:1 1 15rem}
+.status{font-family:var(--mono);font-size:.78rem;line-height:1.5;color:var(--ink-2);min-height:1.5em;margin:1rem 0 0}
+.copy-fallback{display:block;width:100%;min-height:10rem;margin-top:.75rem;padding:.75rem;border:1px solid var(--rule-2);border-radius:2px;background:var(--paper);color:var(--ink);font-family:var(--mono);font-size:.8rem;line-height:1.5}
+.book-tail{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem 1.5rem;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--rule)}
+.linkbtn{background:none;border:0;padding:0;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+/* Terms */
+.terms{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;margin-top:1.5rem}
+.terms h3{font-family:var(--mono);font-weight:500;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 .75rem}
+.terms ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule-2)}
+.terms li{padding-block:.85rem;border-bottom:1px solid var(--rule)}
+.terms li strong{font-weight:700}
+
+/* Status lists: what exists, the phases */
+.items{list-style:none;margin:1.5rem 0 0;padding:0;border-top:1px solid var(--rule-2);max-width:var(--measure)}
+.items>li{padding-block:1.25rem;border-bottom:1px solid var(--rule)}
+.items p{color:var(--ink-2);margin-bottom:.6rem}
+.chip{display:inline-block;font-family:var(--mono);font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:.2rem .5rem;border:1px solid currentColor;border-radius:2px;margin-bottom:.65rem;color:var(--ink-2)}
+.chip.live{color:var(--blue)}
+.chip.now{color:var(--on-ink);background:var(--blue);border-color:var(--blue)}
+.chip.prog{border-color:var(--brass)}
+.chip.dev,.chip.past{color:var(--ink-3);border-style:dashed}
+
+/* Joining */
+.join-form{display:grid;gap:.9rem;margin-top:1.5rem;max-width:30rem}
+.join-form .em{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.join-form input[type=email]{width:100%;min-height:3rem;padding:.7rem .85rem;border:1px solid var(--rule-2);border-radius:2px;background:var(--leaf);color:var(--ink);font-family:var(--mono);font-size:1rem}
+.check{display:flex;gap:.65rem;align-items:flex-start;font-size:1rem;line-height:1.5;color:var(--ink-2)}
+.check input{margin:.3rem 0 0;width:1.1rem;height:1.1rem;flex:none;accent-color:var(--blue)}
+.fine{font-family:var(--mono);font-size:.72rem;line-height:1.55;color:var(--ink-3);margin:0}
+
+/* Three ways in (home) */
+.paths{list-style:none;margin:1.5rem 0 0;padding:0;border-top:1px solid var(--rule-2)}
+.paths>li{padding-block:1.4rem;border-bottom:1px solid var(--rule)}
+.verb{display:block;font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:.5rem}
+.paths p{color:var(--ink-2);margin-bottom:.5rem}
+
+/* Footer */
+footer{border-top:1px solid var(--rule-2);padding-block:2rem 3rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;line-height:1.6;color:var(--ink-3)}
+footer p{max-width:none;margin:0 0 .5rem}
+footer a{color:var(--ink-2)}
+
+@media (min-width:46rem){
+  .hero{padding-block:5rem 4rem}
+  section{padding-block:4.5rem}
+  .terms{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .cursor,.wordmark.mono .us{animation:none}
+}
+.join-fine{margin-top:1rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark mono" href="#top" aria-label="DOS21, back to top">DOS21<span class="us" aria-hidden="true"></span></a>
+    <a class="cta-sm" href="#entry">Make your first entry</a>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <p class="eyebrow">Democracy needs debugging.</p>
+    <h1>Volunteer for your own audit.</h1>
+    <p class="lead">Thomas Jefferson kept the most complete record of his era: his spending, copies of his letters, the weather twice a day. Then he left the books open for someone else to read. We have read them, and the audit is not flattering.</p>
+    <p class="lead">DOS21 asks you to keep your own record, as he did, and then to do the part he left undone: read it back while you can still act on what it shows.</p>
+    <div class="ledger" role="group" aria-label="Two ledger entries">
+      <div class="row"><span class="lbl">Philadelphia · 4 July 1776 · 6 a.m.</span><span class="fill" aria-hidden="true"></span><span class="val">68°</span></div>
+      <div class="row you"><span class="lbl">Your entry · <span class="js-today">today</span></span><span class="fill" aria-hidden="true"></span><span class="val"><span class="cursor" aria-hidden="true"></span></span></div>
+    </div>
+    <p class="note">The first line is from Jefferson’s weather diary, the morning Congress adopted the Declaration.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#entry">Make your first entry</a>
+      <a class="btn" href="#practice">What you’re signing up for</a>
+    </div>
+    <p class="from">A practice of <a href="jefferson-way.html">The Jefferson Way</a></p>
+  </div>
+
+  <section id="practice" aria-labelledby="practice-h">
+    <p class="eyebrow">What you’re signing up for</p>
+    <h2 id="practice-h">One practice, and a promise to come back to it.</h2>
+    <p>Before your next decision that will cost you something (money, a relationship, your standing, your comfort), take a reading from four instruments and write it down.</p>
+    <ol class="numbered">
+      <li><span class="n">01</span><span><span class="name">Evidence</span><span class="q">What do the facts actually show?</span></span></li>
+      <li><span class="n">02</span><span><span class="name">Principle</span><span class="q">What do your deepest values require?</span></span></li>
+      <li><span class="n">03</span><span><span class="name">The long view</span><span class="q">What matters beyond the immediate pressure?</span></span></li>
+      <li><span class="n">04</span><span><span class="name">Accountability</span><span class="q">How would you explain this to the people it affects?</span></span></li>
+      <li><span class="n">05</span><span><span class="name">The record</span><span class="q">The writing itself. About fifteen minutes. A pencil is fine.</span></span></li>
+    </ol>
+    <p>Ninety days later, open the book. Set what you wrote beside what happened. What did the evidence miss? Where did you hold to your principles, and where did you keep your comfort instead? Then do it again on the next hard decision.</p>
+    <p class="strong-line">That is the whole commitment.</p>
+  </section>
+
+  <section id="why" aria-labelledby="why-h">
+    <p class="eyebrow">Why the second half matters</p>
+    <h2 id="why-h">Writing it down was never the hard part.</h2>
+    <p>Jefferson recorded his spending for nearly sixty years, down to a waffle bought from a Paris street vendor. But he kept a ledger that actually balanced only until 1770. He died more than $107,000 in debt, and the people enslaved at Monticello were sold to pay it.</p>
+    <p>Reading it back is where the audit happens. Most of us gather evidence until the evidence starts costing us something. Your record will show you where that line runs.</p>
+    <blockquote>
+      <p>“A man who documents his own record is volunteering for his own audit.”</p>
+      <cite>The Jefferson Audit, Prologue</cite>
+    </blockquote>
+  </section>
+
+  <section id="entry" aria-labelledby="entry-h">
+    <p class="eyebrow">Your first entry</p>
+    <h2 id="entry-h">Make your first entry.</h2>
+    <p>Pick a decision in front of you that will cost you something. Write what each instrument reads. Then keep it where you will find it on <span class="js-back">the read-back date</span>.</p>
+    <p class="privacy">What you write stays in this browser. Nothing is sent to us or to anyone else unless you choose to send it.</p>
+
+    <form class="book" id="entryForm" novalidate>
+      <div class="book-head">
+        <span>Entry <b>No. 1</b></span>
+        <span>Entered <b class="js-today">today</b></span>
+        <span>Read back <b class="js-back">in 90 days</b></span>
+      </div>
+      <div class="field">
+        <label for="f-decision"><span class="k">The decision</span><span class="q">What are you deciding?</span></label>
+        <input id="f-decision" name="decision" type="text" autocomplete="off" placeholder="Whether to take the board seat I was offered">
+      </div>
+      <div class="field">
+        <label for="f-cost"><span class="k">The cost</span><span class="q">What could it cost you?</span></label>
+        <input id="f-cost" name="cost" type="text" autocomplete="off" placeholder="Time, a friendship, my standing">
+      </div>
+      <div class="field">
+        <label for="f-evidence"><span class="k">01 · Evidence</span><span class="q">What do the facts actually show?</span></label>
+        <textarea id="f-evidence" name="evidence" rows="3" placeholder="What I know, what I am assuming, and what I have not checked"></textarea>
+      </div>
+      <div class="field">
+        <label for="f-principle"><span class="k">02 · Principle</span><span class="q">What do your deepest values require?</span></label>
+        <textarea id="f-principle" name="principle" rows="3" placeholder="What I would want to be true of me however this turns out"></textarea>
+      </div>
+      <div class="field">
+        <label for="f-longview"><span class="k">03 · The long view</span><span class="q">What matters beyond the immediate pressure?</span></label>
+        <textarea id="f-longview" name="longview" rows="3" placeholder="How this looks in five years, and to whom"></textarea>
+      </div>
+      <div class="field">
+        <label for="f-accountability"><span class="k">04 · Accountability</span><span class="q">How would you explain this to the people it affects?</span></label>
+        <textarea id="f-accountability" name="accountability" rows="3" placeholder="The sentence I would say to them, face to face"></textarea>
+      </div>
+      <div class="book-foot">
+        <p class="k">05 · The record</p>
+        <p class="q">This page is the record. Keep it, and read it back on <b class="js-back">the read-back date</b>.</p>
+        <div class="actions">
+          <button type="button" class="btn btn-primary" id="saveBtn" hidden>Save my entry</button>
+          <button type="button" class="btn" id="copyBtn">Copy my entry</button>
+          <a class="btn" id="gcalLink" href="https://calendar.google.com/calendar/render?action=TEMPLATE" target="_blank" rel="noopener">Put the read-back date in Google Calendar</a>
+          <button type="button" class="btn" id="icsBtn" hidden>Calendar file for Apple or Outlook</button>
+        </div>
+        <p class="status" id="entryStatus" role="status" aria-live="polite"></p>
+        <textarea id="copyFallback" class="copy-fallback" readonly hidden aria-label="Your entry as text, ready to copy"></textarea>
+        <div class="book-tail">
+          <button type="button" class="linkbtn" id="clearBtn">Clear this entry</button>
+          <a class="textlink" href="#join">Made your entry? Count yourself in</a>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section id="ladder" aria-labelledby="ladder-h">
+    <p class="eyebrow">When you’re ready, not before</p>
+    <h2 id="ladder-h">The first entry is the only requirement.</h2>
+    <ol class="numbered">
+      <li><span class="n">1</span><div><h3 class="name">Close your first entry</h3><p>Ninety days on, read it back against what happened. An entry written and read back is a closed entry, and closed entries are how membership is counted.</p></div></li>
+      <li><span class="n">2</span><div><h3 class="name">Join a Jefferson Circle</h3><p>Five to eight people who meet monthly, each bringing one entry, usually the one that cost the most. The first Circles will form from the first hundred.</p></div></li>
+      <li><span class="n">3</span><div><h3 class="name">Open a decision</h3><p>Take a decision that affects other people (a company, a school board, a congregation, a town) and publish its record.</p></div></li>
+      <li><span class="n">4</span><div><h3 class="name">Ask for theirs</h3><p>Once you have closed entries of your own, ask the people who decide for you to show their reasoning. We ask how they decided, never what.</p></div></li>
+    </ol>
+    <p class="closing">None of that is required. The first entry is.</p>
+  </section>
+
+  <section id="terms" aria-labelledby="terms-h">
+    <p class="eyebrow">The terms</p>
+    <h2 id="terms-h">Built like it preaches.</h2>
+    <div class="terms">
+      <div>
+        <h3>What you are not signing up for</h3>
+        <ul>
+          <li><strong>No dues.</strong> The method is free, and it stays free.</li>
+          <li><strong>No party and no positions.</strong> We never ask what you decided, only how.</li>
+          <li><strong>No audience.</strong> Your book is yours. You share only what you choose.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What we owe you</h3>
+        <ul>
+          <li><strong>Our books are open too.</strong> What we decided, why, how it turned out, and where we got it wrong.</li>
+          <li><strong>The method is open.</strong> We publish how the assessment works, what it measures, and what the data shows as completions accumulate, error bars included.</li>
+          <li><strong>Access is part of the mission.</strong> Twenty-five percent of future revenue is permanently committed to educational access and civic-education programs.</li>
+          <li><strong>The Fourth of July.</strong> Every year on the Fourth, members and founders close the year’s books together.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="today" aria-labelledby="today-h">
+    <p class="eyebrow">What exists today</p>
+    <h2 id="today-h">We publish what is real and label what is coming.</h2>
+    <ul class="items">
+      <li>
+        <span class="chip live">Live now</span>
+        <h3>The Jefferson Decision Assessment</h3>
+        <p>Fifteen questions. Your decision archetype, your five-dimension profile, and the documented Jefferson decisions that match how you decide. It shows how you think you decide. Your record will show how you actually do.</p>
+        <div class="textlinks"><a class="textlink" data-link="ASSESSMENT_URL" href="#" target="_blank" rel="noopener" hidden>Take the assessment</a></div>
+      </li>
+      <li>
+        <span class="chip">Published</span>
+        <h3>The Real Jefferson</h3>
+        <p>The essay series examining the method at full depth: its triumphs, its stress tests, and its failures.</p>
+        <div class="textlinks"><a class="textlink" data-link="ESSAYS_URL" href="#" target="_blank" rel="noopener" hidden>Read the essays</a></div>
+      </li>
+      <li>
+        <span class="chip prog">In progress</span>
+        <h3>The Jefferson Audit</h3>
+        <p>A book that audits Jefferson with the books he left open, then hands the audit to you.</p>
+      </li>
+      <li>
+        <span class="chip dev">In development</span>
+        <h3>The Digital Jefferson Advisor</h3>
+        <p>Decision support built on the five instruments. It does not exist yet. When it does, the people keeping records now will have shaped it.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="join" aria-labelledby="join-h">
+    <p class="eyebrow">The first hundred</p>
+    <h2 id="join-h">The record continues. Your entry next.</h2>
+    <p>DOS21 is early, and early is the point. The first hundred record-keepers will shape what gets built. Progress reports go out through The Real Jefferson on Substack, along with word when the first Jefferson Circles form.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://therealjefferson7.substack.com/subscribe" target="_blank" rel="noopener">Count me in</a>
+    </div>
+    <p class="fine join-fine">Opens The Real Jefferson on Substack. Free, and you can unsubscribe anytime. Substack keeps your email. Your entries stay with you.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>DOS21 · Democracy Operating System for the 21st Century</p>
+  <p>A practice of <a href="jefferson-way.html">The Jefferson Way</a></p>
+  <p>Sources: the 1776 weather readings, Jefferson’s weather memorandum book (Massachusetts Historical Society); his diary and daily readings, <a href="https://www.monticello.org/encyclopedia/thermometer" target="_blank" rel="noopener">Monticello</a>; his memorandum books and debt, <a href="https://www.monticello.org/encyclopedia/debt" target="_blank" rel="noopener">Monticello</a>.</p>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // Set each address once it is confirmed. An empty value keeps that link hidden.
+  var CONFIG = {
+    ASSESSMENT_URL: "",
+    ESSAYS_URL: "https://therealjefferson7.substack.com/"
+  };
+
+  var DRAFT_KEY = "dos21.entry.draft.v1";
+  var FIELDS = ["decision", "cost", "evidence", "principle", "longview", "accountability"];
+  function $(id) { return document.getElementById(id); }
+  function each(sel, fn) { Array.prototype.forEach.call(document.querySelectorAll(sel), fn); }
+  function say(id, msg) { var el = $(id); if (el) el.textContent = msg; }
+  function pad(n) { return String(n).padStart(2, "0"); }
+
+  // Dates: entered today, read back in ninety days
+  var today = new Date(); today.setHours(12, 0, 0, 0);
+  var back = new Date(today.getTime()); back.setDate(back.getDate() + 90);
+  var backNext = new Date(back.getTime()); backNext.setDate(backNext.getDate() + 1);
+  var longFmt = null;
+  try { longFmt = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric" }); } catch (e) {}
+  function fmt(d) { return longFmt ? longFmt.format(d) : d.toDateString(); }
+  function ymd(d) { return d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()); }
+  function isoDay(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  var todayStr = fmt(today), backStr = fmt(back);
+  each(".js-today", function (el) { el.textContent = todayStr; });
+  each(".js-back", function (el) { el.textContent = backStr; });
+
+  // Links that exist only once their addresses are set
+  each("[data-link]", function (a) {
+    var url = CONFIG[a.getAttribute("data-link")];
+    if (url) { a.href = url; a.hidden = false; }
+  });
+
+  // Calendar reminder for the read-back date. It carries no entry text.
+  var calTitle = "Read back your DOS21 entry";
+  var calBody = "Ninety days ago you made a DOS21 entry. Open the entry you saved and set it beside what happened. What did the evidence miss? Where did you hold to your principles, and where did you keep your comfort instead?";
+  var gcal = $("gcalLink");
+  if (gcal) {
+    gcal.href = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(calTitle) +
+      "&dates=" + ymd(back) + "/" + ymd(backNext) + "&details=" + encodeURIComponent(calBody);
+  }
+
+  // Draft kept in this browser only
+  function readDraft() { try { var raw = window.localStorage.getItem(DRAFT_KEY); return raw ? JSON.parse(raw) : null; } catch (e) { return null; } }
+  function writeDraft(obj) { try { window.localStorage.setItem(DRAFT_KEY, JSON.stringify(obj)); } catch (e) {} }
+  function clearDraft() { try { window.localStorage.removeItem(DRAFT_KEY); } catch (e) {} }
+  function values() {
+    var v = {};
+    FIELDS.forEach(function (k) { var el = $("f-" + k); v[k] = el ? el.value.trim() : ""; });
+    return v;
+  }
+  var draft = readDraft();
+  if (draft) FIELDS.forEach(function (k) { var el = $("f-" + k); if (el && typeof draft[k] === "string" && !el.value) el.value = draft[k]; });
+  var form = $("entryForm"), draftTimer = null;
+  form.addEventListener("input", function () {
+    clearTimeout(draftTimer);
+    draftTimer = setTimeout(function () { writeDraft(values()); }, 400);
+  });
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+
+  // The entry as plain text, with the read-back questions built in
+  function compose() {
+    var v = values();
+    if (!FIELDS.some(function (k) { return v[k]; })) return "";
+    function block(title, q, body) { return title + (q ? " · " + q : "") + "\n" + (body || "(left blank)") + "\n\n"; }
+    var s = "DOS21 · ENTRY No. 1\nEntered: " + todayStr + "\nRead back: " + backStr + "\n\n";
+    s += block("THE DECISION", "", v.decision);
+    s += block("THE COST", "What could it cost me?", v.cost);
+    s += block("01 EVIDENCE", "What do the facts actually show?", v.evidence);
+    s += block("02 PRINCIPLE", "What do my deepest values require?", v.principle);
+    s += block("03 THE LONG VIEW", "What matters beyond the immediate pressure?", v.longview);
+    s += block("04 ACCOUNTABILITY", "How would I explain this to the people it affects?", v.accountability);
+    s += "05 THE RECORD\nThis page is the fifth instrument.\n\n";
+    s += "ON " + backStr.toUpperCase() + ", READ THIS BACK\nWhat happened?\nWhat did the evidence miss?\nWhere did I hold to my principles, and where did I keep my comfort instead?\n\n";
+    s += "DOS21 · A practice of The Jefferson Way\n";
+    return s;
+  }
+  var EMPTY_MSG = "Write the decision and at least one reading first.";
+
+  // Saving: inside Claude the viewer asks before saving; on an ordinary web host the browser saves directly
+  var inViewer = !!(window.claude && typeof window.claude.use === "function");
+  var downloads = null;
+  var saveBtn = $("saveBtn"), icsBtn = $("icsBtn");
+  if (!inViewer) { saveBtn.hidden = false; icsBtn.hidden = false; }
+  else {
+    window.claude.use("downloads").then(function (ns) { downloads = ns; if (ns) saveBtn.hidden = false; }, function () {});
+  }
+  function entryFilename() { return "dos21-entry-" + isoDay(today) + ".txt"; }
+  function browserSave(name, text, type) {
+    var url = URL.createObjectURL(new Blob([text], { type: type }));
+    var a = document.createElement("a");
+    a.href = url; a.download = name; a.rel = "noopener";
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 1500);
+  }
+  saveBtn.addEventListener("click", function () {
+    var text = compose();
+    if (!text) { say("entryStatus", EMPTY_MSG); return; }
+    if (inViewer) {
+      if (!downloads) { say("entryStatus", "Saving is not available here. Use Copy my entry instead."); return; }
+      downloads.save({ filename: entryFilename(), data: text }).then(function (r) {
+        if (r && r.status === "saved") say("entryStatus", "Saved. Keep it where you will find it on " + backStr + ".");
+      }, function (e) {
+        var code = e && e.code;
+        if (code === "declined") say("entryStatus", "Not saved. You can copy it instead.");
+        else if (code === "rate_limited") say("entryStatus", "A save prompt is already open. Finish that one first.");
+        else say("entryStatus", "Saving is not available here. Use Copy my entry instead.");
+      });
+    } else {
+      try { browserSave(entryFilename(), text, "text/plain;charset=utf-8"); say("entryStatus", "Saved to your downloads. Keep it where you will find it on " + backStr + "."); }
+      catch (e) { say("entryStatus", "Your browser blocked the save. Use Copy my entry instead."); }
+    }
+  });
+
+  // Copying, with a select-and-copy fallback
+  $("copyBtn").addEventListener("click", function () {
+    var text = compose();
+    if (!text) { say("entryStatus", EMPTY_MSG); return; }
+    var fb = $("copyFallback");
+    function fallback() { fb.value = text; fb.hidden = false; fb.focus(); fb.select(); say("entryStatus", "Select the text below and copy it."); }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { fb.hidden = true; say("entryStatus", "Copied. Paste it into your notes, or email it to yourself."); }, fallback);
+      } else { fallback(); }
+    } catch (e) { fallback(); }
+  });
+
+  // Calendar file for Apple Calendar and Outlook (ordinary web hosts only)
+  function icsText(s) { return s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
+  function fold(line) { var out = []; while (line.length > 73) { out.push(line.slice(0, 73)); line = " " + line.slice(73); } out.push(line); return out.join("\r\n"); }
+  icsBtn.addEventListener("click", function () {
+    var now = new Date();
+    var stamp = now.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+    var lines = [
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//The Jefferson Way//DOS21//EN", "CALSCALE:GREGORIAN",
+      "BEGIN:VEVENT", "UID:dos21-" + now.getTime() + "@thejeffersonway", "DTSTAMP:" + stamp,
+      "DTSTART;VALUE=DATE:" + ymd(back), "DTEND;VALUE=DATE:" + ymd(backNext),
+      "SUMMARY:" + icsText(calTitle), "DESCRIPTION:" + icsText(calBody),
+      "BEGIN:VALARM", "TRIGGER:PT9H", "ACTION:DISPLAY", "DESCRIPTION:" + icsText(calTitle), "END:VALARM",
+      "END:VEVENT", "END:VCALENDAR"
+    ].map(fold);
+    try { browserSave("dos21-read-back-" + isoDay(back) + ".ics", lines.join("\r\n") + "\r\n", "text/calendar;charset=utf-8"); say("entryStatus", "Calendar file saved. Open it to add " + backStr + "."); }
+    catch (e) { say("entryStatus", "Your browser blocked the file. Use the Google Calendar link instead."); }
+  });
+
+  // Clearing takes two taps
+  var clearBtn = $("clearBtn"), armed = false, armTimer = null;
+  clearBtn.addEventListener("click", function () {
+    if (!armed) {
+      armed = true; clearBtn.textContent = "Tap again to clear";
+      armTimer = setTimeout(function () { armed = false; clearBtn.textContent = "Clear this entry"; }, 4000);
+      return;
+    }
+    clearTimeout(armTimer); armed = false; clearBtn.textContent = "Clear this entry";
+    FIELDS.forEach(function (k) { var el = $("f-" + k); if (el) el.value = ""; });
+    clearDraft(); $("copyFallback").hidden = true; say("entryStatus", "Cleared.");
+  });
+})();
+</script>
+
+</body>
+</html>
